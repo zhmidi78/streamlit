@@ -250,13 +250,13 @@ if __name__ == "__main__":
                                                       '41%_60%',
                                                       '61%_et_plus'])
 
-# Titre H2
-    st.markdown("""
-                <h2 style="color:#418b85;text-align:left;font-size:1.8em;font-style:italic;font-weight:700;margin:0px;">
-                Comparaison de “la trajectoire” prise par la prédiction du client à celles des groupes de Clients</h2>
-                """, 
-            unsafe_allow_html=True)
-    st.write("")
+# # Titre H2
+#     st.markdown("""
+#                 <h2 style="color:#418b85;text-align:left;font-size:1.8em;font-style:italic;font-weight:700;margin:0px;">
+#                 Comparaison de “la trajectoire” prise par la prédiction du client à celles des groupes de Clients</h2>
+#                 """, 
+#             unsafe_allow_html=True)
+#     st.write("")
 
 # Moyenne des variables par classe
     df_groupes_mean = df_groupes.groupby(['typologie_clients']).mean()
