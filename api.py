@@ -294,34 +294,34 @@ if __name__ == "__main__":
     liste_variables = lecture_X_test_clean().drop(
     labels="sk_id_curr", axis=1).columns.to_list()
 
-# division de la largeur de la page en 2 pour diminuer la taille du menu déroulant
-    col1, col2, = st.columns(2)
-    with col1:
-        ID_var = st.selectbox("*Veuillez sélectionner une variable à l'aide du menu déroulant 👇*",
-                          (liste_variables))
-        st.write("Vous avez sélectionné la variable :", ID_var)
+# # division de la largeur de la page en 2 pour diminuer la taille du menu déroulant
+#     col1, col2, = st.columns(2)
+#     with col1:
+#         ID_var = st.selectbox("*Veuillez sélectionner une variable à l'aide du menu déroulant 👇*",
+#                           (liste_variables))
+#         st.write("Vous avez sélectionné la variable :", ID_var)
 
-    fig = plt.figure(figsize=(12, 4))
-    ax1 = fig.add_subplot(121)
-    shap.dependence_plot(ID_var,
-                     calcul_valeurs_shap()[1],
-                     lecture_X_test_clean().drop(labels="sk_id_curr", axis=1),
-                     interaction_index=None,
-                     alpha=0.5,
-                     x_jitter=0.5,
-                     title="Graphique de Dépendance",
-                     ax=ax1,
-                     show=False)
-    ax2 = fig.add_subplot(122)
-    shap.dependence_plot(ID_var,
-                     calcul_valeurs_shap()[1],
-                     lecture_X_test_clean().drop(labels="sk_id_curr", axis=1),
-                     interaction_index='auto',
-                     alpha=0.5,
-                     x_jitter=0.5,
-                     title="Graphique de Dépendance et Intéraction",
-                     ax=ax2,
-                     show=False)
-    fig.tight_layout()
-    st.pyplot(fig)
+#     fig = plt.figure(figsize=(12, 4))
+#     ax1 = fig.add_subplot(121)
+#     shap.dependence_plot(ID_var,
+#                      calcul_valeurs_shap()[1],
+#                      lecture_X_test_clean().drop(labels="sk_id_curr", axis=1),
+#                      interaction_index=None,
+#                      alpha=0.5,
+#                      x_jitter=0.5,
+#                      title="Graphique de Dépendance",
+#                      ax=ax1,
+#                      show=False)
+#     ax2 = fig.add_subplot(122)
+#     shap.dependence_plot(ID_var,
+#                      calcul_valeurs_shap()[1],
+#                      lecture_X_test_clean().drop(labels="sk_id_curr", axis=1),
+#                      interaction_index='auto',
+#                      alpha=0.5,
+#                      x_jitter=0.5,
+#                      title="Graphique de Dépendance et Intéraction",
+#                      ax=ax2,
+#                      show=False)
+#     fig.tight_layout()
+#     st.pyplot(fig)
     
